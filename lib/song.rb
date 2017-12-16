@@ -28,7 +28,7 @@ def self.create_by_name(song_name)
   song
 end
 
-def self.find_or_create_by_name(song_name)
+def self.find_by_name(song_name)
   self.find_by_name(song_name) ||
   self.create_by_name(song_name)
 end
@@ -42,13 +42,13 @@ def self.new_from_filename(file)
   artist_name = file[0]
   song_name = file[1].gsub(".mp3", "")
 
-  song = self.create 
+  song = self.create
   song.name = song_name
   song.artist_name = artist_name
   song
 end
 
 def self.destroy_all
-  @@all.clear 
-end 
-end 
+  @@all.clear
+end
+end
